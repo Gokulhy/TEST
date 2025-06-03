@@ -9,5 +9,6 @@ jobs:
     steps:
       - name: Print greeting
         run: echo "action_state=yellow" >> $GITHUB_ENV
+        
       - name: hello
-        run: echo "printing action state = $action_state"
+        run: echo "${{ env.action_state }}"
