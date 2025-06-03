@@ -2,6 +2,9 @@ name: Hello World Workflow
 
 on: [push]
 
+env:
+  day: Monday
+
 jobs:
   say-hello:
     runs-on: ubuntu-latest
@@ -9,6 +12,6 @@ jobs:
     steps:
       - name: Print greeting
         run: echo "action_state=yellow" >> $GITHUB_ENV
-        
+
       - name: hello
-        run: echo "${{ env.action_state }}"
+        run: echo "$day"
