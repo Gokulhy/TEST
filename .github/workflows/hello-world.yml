@@ -8,4 +8,6 @@ jobs:
 
     steps:
       - name: Print greeting
-        run: echo "🎉 Hello, world! GitHub Actions is working!"
+        run: echo "action_state=yellow">> $GITHUB_ENV
+      - name: hello
+        run: echo "$action_state"
