@@ -6,6 +6,19 @@ env:
   day: Monday
 
 jobs:
+  job1:
+    name: upload-artifact
+    runs-on: ubuntu-latest
+    steps:
+      - name: local file
+        run: echo "hello world" > file.txt
+      
+      - uses: actions/upload-artifact@v2
+        with:
+          name: file
+          path: file.txt
+
+
   say-hello:
     runs-on: ubuntu-latest
 
